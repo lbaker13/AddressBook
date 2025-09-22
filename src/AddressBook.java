@@ -16,7 +16,6 @@ public class AddressBook {
         }
     }
 
-
     public BuddyInfo removeBuddy(int index) {
         if (index >= 0 && index < buddies.size()) {
             return buddies.remove(index);
@@ -24,6 +23,12 @@ public class AddressBook {
         return null;
     }
 
+    public String getBuddyName(int index) {
+        if (index >= 0 && index < buddies.size()) {
+            return buddies.get(index).getName();
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
         BuddyInfo buddy = new BuddyInfo("Homer", "123 Carleton Drive", "123-456-7890");
@@ -32,5 +37,6 @@ public class AddressBook {
         addressBook.addBuddy(buddy);
         // remove buddy at index 0 from buddies
         addressBook.removeBuddy(0);
+        System.out.println(addressBook.getBuddyName(0));
     }
 }
